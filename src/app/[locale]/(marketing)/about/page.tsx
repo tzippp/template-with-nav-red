@@ -1,4 +1,3 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 
 type IAboutProps = {
@@ -7,31 +6,22 @@ type IAboutProps = {
 
 export async function generateMetadata(props: IAboutProps) {
   const { locale } = await props.params;
-  const t = await getTranslations({
-    locale,
-    namespace: 'About',
-  });
 
   return {
-    title: t('meta_title'),
-    description: t('meta_description'),
+    title: 'About',
+    description: 'About page description',
   };
 }
 
 export default async function About(props: IAboutProps) {
   const { locale } = await props.params;
-  setRequestLocale(locale);
-  const t = await getTranslations({
-    locale,
-    namespace: 'About',
-  });
 
   return (
     <>
-      <p>{t('about_paragraph')}</p>
+      <p>About paragraph content</p>
 
       <div className="mt-2 text-center text-sm">
-        {`${t('translation_powered_by')} `}
+        {`Translation powered by `}
         <a
           className="text-blue-700 hover:border-b-2 hover:border-blue-700"
           href="https://l.crowdin.com/next-js"

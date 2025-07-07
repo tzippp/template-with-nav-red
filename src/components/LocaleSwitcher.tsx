@@ -1,7 +1,6 @@
 'use client';
 
 import type { ChangeEventHandler } from 'react';
-import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { usePathname } from '@/libs/I18nNavigation';
 import { routing } from '@/libs/I18nRouting';
@@ -9,7 +8,6 @@ import { routing } from '@/libs/I18nRouting';
 export const LocaleSwitcher = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const locale = useLocale();
 
   const handleChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
     router.push(`/${event.target.value}${pathname}`);
@@ -18,7 +16,7 @@ export const LocaleSwitcher = () => {
 
   return (
     <select
-      defaultValue={locale}
+      defaultValue={routing.locales[0]}
       onChange={handleChange}
       className="border border-gray-300 font-medium focus:outline-hidden focus-visible:ring-3"
       aria-label="lang-switcher"

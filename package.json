@@ -5,9 +5,8 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev:spotlight": "npx @spotlightjs/sidecar",
     "dev:next": "next dev --turbopack",
-    "dev": "run-p db-server:file dev:*",
+    "dev": "next dev",
     "build:next": "next build",
     "build:cloudflare": "next build && next export",
     "build": "run-p db-server:memory build:* --race",
@@ -39,11 +38,9 @@
     "@electric-sql/pglite": "^0.3.4",
     "@hookform/resolvers": "^5.1.1",
     "@logtape/logtape": "^1.0.1",
-    "@sentry/nextjs": "^9.34.0",
     "@t3-oss/env-nextjs": "^0.13.8",
     "drizzle-orm": "^0.44.2",
     "next": "^15.3.5",
-    "next-intl": "^4.3.4",
     "pg": "^8.16.3",
     "posthog-js": "^1.256.1",
     "react": "19.1.0",

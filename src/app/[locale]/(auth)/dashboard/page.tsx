@@ -1,17 +1,13 @@
-import { getTranslations } from 'next-intl/server';
-import { Hello } from '@/components/Hello';
+// Removed next-intl imports and usage for single-language setup
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await props.params;
-  const t = await getTranslations({
-    locale,
-    namespace: 'Dashboard',
-  });
+  // Removed next-intl imports and usage for single-language setup
 
   return {
-    title: t('meta_title'),
+    title: 'Dashboard',
   };
 }
 

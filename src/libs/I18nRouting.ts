@@ -1,4 +1,4 @@
-import { defineRouting } from 'next-intl/routing';
+// Removed next-intl/routing for single-language setup
 import { AppConfig } from '@/utils/AppConfig';
 
 export const routing = defineRouting({
