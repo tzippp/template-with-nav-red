@@ -11,6 +11,12 @@ const baseConfig: NextConfig = {
   },
   poweredByHeader: false,
   reactStrictMode: true,
+  // Cloudflare Pages configuration
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
 };
 
 // Initialize the Next-Intl plugin
